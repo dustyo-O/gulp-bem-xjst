@@ -32,8 +32,9 @@ describe('gulp-bemhtml', function () {
         });
 
         it('outputs bemhtml templates compiler', function () {
-            var bemhtml = _eval(vinylFile.contents.toString());
-            expect(bemhtml.apply({block: 'page'})).to.be.equal('<h1 class="page">Hello, world!</h1>');
+            var tmpl = _eval(vinylFile.contents.toString());
+
+            expect(tmpl.bemhtml.apply({block: 'page'})).to.be.equal('<h1 class="page">Hello, world!</h1>');
         });
     });
 
